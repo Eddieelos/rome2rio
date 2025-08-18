@@ -1,0 +1,76 @@
+version: 2
+models:
+  - name: fact_bookings
+    description: Fact table for bookings, with passenger count and total revenue
+    columns:
+      - name: booking_id
+        description: Unique identifier for the booking
+        tests:
+          - not_null
+          - unique
+      - name: passenger_count
+        description: Number of passengers in the booking
+        tests:
+          - not_null
+      - name: total_revenue
+        description: Total revenue for the booking
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0]
+              config:
+                severity: warn
+                quote: false
+                where: "total_revenue = 0"
+  - name: dim_passenger
+    description: Dimension table for passengers
+    columns:
+      - name: passenger_id
+        description: Unique identifier for the passenger
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: Passenger's first name
+        tests:
+          - not_null
+      - name: last_name
+        description: Passenger's last name
+        tests:
+          - not_null
+      - name: date_of_birth
+        description: Passenger's date of birth
+        tests:
+          - not_null
+  - name: dim_segment
+    description: Dimension table for segments
+    columns:
+      - name: segment_id
+        description: Unique identifier for the segment
+        tests:
+          - not_null
+          - unique
+      - name: origin
+        description: Departure airport code
+        tests:
+          - not_null
+      - name: destination
+        description: Arrival airport code
+        tests:
+          - not_null
+      - name: departure_datetime
+        description: Scheduled departure date and time
+        tests:
+          - not_null
+      - name: arrival_datetime
+        description: Scheduled arrival date and time
+        tests:
+          - not_null
+      - name: airline_code
+        description: Airline code for the segment
+        tests:
+          - not_null
+      - name: flight_number
+        description: Flight number for the segment
+        tests:
+          - not_null

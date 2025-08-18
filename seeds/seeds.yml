@@ -1,0 +1,66 @@
+version: 2
+seeds:
+  - name: bookings
+    description: Seed data for bookings
+    columns:
+      - name: booking_id
+        description: Unique identifier for the booking
+      - name: booking_date
+        description: Date the booking was made
+      - name: customer_id
+        description: Unique identifier for the customer
+      - name: number_of_passengers
+        description: Number of passengers in the booking
+  - name: passengers
+    description: Seed data for passengers
+    columns:
+      - name: passenger_id
+        description: Unique identifier for the passenger
+      - name: first_name
+        description: Passenger's first name
+      - name: last_name
+        description: Passenger's last name
+      - name: date_of_birth
+        description: Passenger's date of birth
+  - name: segments
+    description: Seed data for segments
+    columns:
+      - name: segment_id
+        description: Unique identifier for the segment
+      - name: origin
+        description: Departure airport code
+      - name: destination
+        description: Arrival airport code
+      - name: departure_datetime
+        description: Scheduled departure date and time
+      - name: arrival_datetime
+        description: Scheduled arrival date and time
+      - name: airline_code
+        description: Airline code for the segment
+      - name: flight_number
+        description: Flight number for the segment
+  - name: ticketPassenger
+    description: Seed data for ticketPassenger
+    columns:
+      - name: ticket_id
+        description: Unique identifier for the ticket
+      - name: passenger_id
+        description: Unique identifier for the passenger
+  - name: tickets
+    description: Seed data for tickets
+    columns:
+      - name: ticket_id
+        description: Unique identifier for the ticket
+      - name: booking_id
+        description: Unique identifier for the booking
+      - name: issue_date
+        description: Date the ticket was issued
+      - name: ticket_price
+        description: Price of the ticket
+  - name: ticketSegment
+    description: Seed data for ticketSegment
+    columns:
+      - name: ticket_id
+        description: Unique identifier for the ticket
+      - name: segment_id
+        description: Unique identifier for the segment
