@@ -21,6 +21,12 @@ models:
               severity: warn
   - name: dim_passenger
     description: Dimension table for passengers
+    tags: [pii]
+    config:
+      meta:
+        owner: "@eddieazuelos"
+        pii: true
+        color: "#FF9900"
     columns:
       - name: passenger_id
         description: Unique identifier for the passenger

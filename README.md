@@ -24,4 +24,4 @@ See `dags/rome2rio_dbt_dag.py` for Airflow DAG pseudocode
 Model-level docs are in the YAML files in `models/marts/`
 
 ## Code Review & Leadership
-See `code_review.md` and `leadership_scenario.md` for responses
+See `Part_2_code_review.md` and `Part_3_leadership_scenario.md` for responses
